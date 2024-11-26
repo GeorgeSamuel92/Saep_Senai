@@ -36,4 +36,17 @@ export const TarefaController = {
       res.json({ message: error });
     }
   },
+
+  atualizarStatus: async (req, res) => {
+    try {
+      const { id } = res.params;
+      const { status } req.body;
+      const newStatus = status.toUpperCase();
+      const tarefas = await Tarefa.atualaizarStatus(id, newStatus);
+      // console.log(users);
+      res.json({ tarefas });
+    } catch (error) {
+      res.json({ message: error });
+    }
+  },
 };
