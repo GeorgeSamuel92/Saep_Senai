@@ -1,4 +1,4 @@
-(document).ready(async function () {
+$(document).ready(async function () {
     const board = {
       "Não Iniciado": document.querySelector("#nao-iniciado"),
       "Em Desenvolvimento": document.querySelector("#em-desenvolvimento"),
