@@ -1,5 +1,8 @@
 $(document).ready(function () {
+<<<<<<< HEAD
     $(document).off('submit', '#formUsuario');
+=======
+>>>>>>> 1c013276b611b451ea251b768094a0cec1e69c2e
     $(document).on('submit', '#formUsuario', async function (event) {
         event.preventDefault();
         const formData = {
@@ -20,4 +23,8 @@ $(document).ready(function () {
                 alert('Ocorreu um erro');
             })
     })
+<<<<<<< HEAD
 })
+=======
+})j
+>>>>>>> 1c013276b611b451ea251b768094a0cec1e69c2e
