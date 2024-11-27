@@ -6,10 +6,10 @@ export const TarefaController = {
       const { id_usuario, descricao, equipe, prioridade } = req.body;
       const status = "NÃO INICIADO"
       const tarefa = new Tarefa({ id_usuario, descricao, equipe, prioridade, status });
-      console.log(tarefa);
+      // console.log(tarefa);
 
       const result = await tarefa.insertTarefa();
-      console.log(result);
+      // console.log(result);
 
       res.json({ result });
     } catch (error) {
@@ -48,17 +48,26 @@ export const TarefaController = {
       res.json({ message: error });
     }
   },
-  // 
-  deletarStatus: async (req, res) => {
+
+  deletarTarefa: async (req, res) => {
     try {
       const {id} = req.params;
-      const {status} = req.body;
-      const newStatus = status.toUpperCase();
-      const tarefas = await Tarefa.deletarStatus(id, newStatus);
+      const tarefas = await Tarefa.deletarTarefa(id);
+      console.log("chegou aqui no tarefa controller deletar tarefa", tarefas)
       res.json({ tarefas });
     } catch (error) {
       res.json({ message: error });
     }
   },
-};
 
+  listarTarefa: async (req, res) => {
+    try {
+      const {id} = req.params;
+      const tarefa = await Tarefa.listarTarefa(id);
+      console.log("chegou aqui no listar", tarefa);
+      res.json({ tarefa });
+    } catch (error) {
+      res.json({ message: error });
+    }
+  },
+};
