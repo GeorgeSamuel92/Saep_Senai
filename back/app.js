@@ -14,6 +14,12 @@ app.use(json());
 app.use(urlencoded({ extended: false }));
 app.use('/', router);
 
-app.listen(port, () => {
-    console.log(`servidor respondendo na porta: ${port}`);
+// app.listen(port, () => {
+//     console.log(`servidor respondendo na porta: ${port}`);
+// });
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });

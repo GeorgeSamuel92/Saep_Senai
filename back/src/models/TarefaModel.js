@@ -34,11 +34,24 @@ class Tarefa {
     try {
       const conn = await connection();
       const [rows] =
-        await conn.query(`SELECT T.id_tarefa, T.id_usuario, T.descricao, T.equipe, T.prioridade, T.data_cadastro, T.status 
+        await conn.query(`SELECT T.id_tarefa, T.id_usuario, T.descricao, T.equipe, T.prioridade, T.data_cadastro, T.status, U.nome
         FROM TAREFA T 
         INNER JOIN USUARIO U 
         ON T.id_usuario = U.id_usuario;`);
         console.log(rows);
+      return rows;
+    } catch (error) {
+      throw error;
+    }
+  }
+  
+  static async atualizaStatus(id, status) {
+    try {
+      const conn = await connection();
+      const PSql = `UPDATE TAREFA SET status=? WHERE id_tarefa?`;
+      const pValues = {status, is};
+      const {result} = await conn.query{pSql, pValues};
+      res.json
       return rows;
     } catch (error) {
       throw error;

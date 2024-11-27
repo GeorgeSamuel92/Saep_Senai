@@ -8,7 +8,6 @@ $(document).ready(function () {
         }
         console.log(localStorage.getItem('ipApi'));
 
-
         axios.post(`${localStorage.getItem('ipApi')}novoUsuario`, formData)
             .then(response => {
                 console.log(response);
