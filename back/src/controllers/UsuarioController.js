@@ -4,10 +4,11 @@ export const UsuarioController = {
     novoUsuario: async (req, res) => {
         try {
             const { nome, email } = req.body;
+            console.log(req.body)
             const usuario = new Usuario({ nome, email })
             console.log(usuario);
             
-            const result = await usuario.insertUsuario();
+            const result = await usuario.insertUsuario()
             console.log(result);
             
             res.json({ result });

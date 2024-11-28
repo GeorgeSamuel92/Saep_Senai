@@ -84,6 +84,7 @@ $(document).ready(function () {
           console.log(error);
           alert("Ocorreu um erro ao alterar a tarefa.");
         });
+        se
     }
   });
 });

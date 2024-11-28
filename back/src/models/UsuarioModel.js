@@ -8,6 +8,7 @@ class Usuario{
 
     async insertUsuario(){
         try {
+            console.log("aqui")
             const conn= await connection();
             const pSql = "INSERT INTO USUARIO (NOME, EMAIL) VALUES (?,?)";
             const pValues = [this.nome, this.email];
